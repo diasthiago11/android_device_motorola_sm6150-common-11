@@ -171,6 +171,10 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
+# Moto Camera 2
+PRODUCT_PACKAGES += \
+    MotCamera2
+
 # CNE
 PRODUCT_PACKAGES += \
     cneapiclient \
