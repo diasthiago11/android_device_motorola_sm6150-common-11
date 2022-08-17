@@ -117,7 +117,9 @@ PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
     android.hardware.audio.effect@6.0-impl \
     android.hardware.audio.service \
+    android.hardware.soundtrigger@2.0-impl \
     android.hardware.soundtrigger@2.2-impl \
+    android.hardware.soundtrigger@2.3-impl \
 	sound_trigger.primary.sm6150 \
     android.hardware.bluetooth.audio@2.0-impl \
     audio.a2dp.default \
