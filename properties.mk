@@ -284,6 +284,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     ro.vendor.use_data_netmgrd=true \
     telephony.lteOnCdmaDevice=1,1
 
+# RCS
+PRODUCT_PRODUCT_PROPERTIES += \
+    persist.rcs.supported=1
+
 # SurfaceFlinger
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
     ro.surface_flinger.has_wide_color_display=true \
