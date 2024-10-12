@@ -31,6 +31,10 @@ WITH_DEXPREOPT_DEBUG_INFO := false
 # Do not generate libartd.
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
+# Moto Camera 2
+PRODUCT_PACKAGES += \
+    MotCamera2
+
 # Disable async MTE on system_server
 PRODUCT_SYSTEM_EXT_PROPERTIES += \
     persist.arm64.memtag.system_server=off
