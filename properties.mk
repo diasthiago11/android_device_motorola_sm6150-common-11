@@ -94,10 +94,8 @@ PRODUCT_ODM_PROPERTIES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.bluetooth.a2dp_offload.disabled=false \
-    persist.bluetooth.a2dp_offload.cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
-    persist.vendor.bt.a2dp.aac_whitelist=false \
     persist.vendor.qcom.bluetooth.enable.splita2dp=true \
+    persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac \
     persist.vendor.qcom.bluetooth.soc=cherokee \
     ro.bluetooth.a2dp_offload.supported=true \
     vendor.qcom.bluetooth.soc=cherokee
@@ -124,12 +122,12 @@ PRODUCT_PRODUCT_PROPERTIES += \
     bluetooth.profile.sap.server.enabled?=true
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
+    ro.bluetooth.library_name=libbluetooth_qti.so \
     vendor.bluetooth.soc=cherokee
 
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.vendor.camera.expose.aux=1 \
-    persist.vendor.camera.physical.num=5
+    persist.vendor.camera.expose.aux=1
 
 # Chipset
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -147,10 +145,11 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 # Crypto
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.crypto.allow_encrypt_override=true \
-    ro.crypto.volume.filenames_mode=aes-256-cts \
-    ro.crypto.dm_default_key.options_format.version=2 \
-    ro.crypto.volume.metadata.method=dm-default-key \
-    ro.crypto.volume.options=::v2
+    ro.crypto.volume.filenames_mode=aes-256-cts
+
+# Charger
+PRODUCT_PRODUCT_PROPERTIES += \
+    ro.charger.enable_suspend=true
 
 # Dalvik
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -221,9 +220,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.dbg.vt_avail_ovr=1  \
     persist.dbg.wfc_avail_ovr=1
 
-PRODUCT_PRODUCT_PROPERTIES += \
-    ro.qcom.ims.use_moto_vt_ext=true
-
 # Incremental FS
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.incremental.enable=1
@@ -276,9 +272,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Perf
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.extension_library=libqti-perfd-client.so \
-    ro.vendor.perf-hal.ver=2.2 \
-    ro.vendor.perf.scroll_opt=true
+    ro.vendor.extension_library=libqti-perfd-client.so
 
 # Qualcomm System Daemon
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -323,7 +317,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
     DEVICE_PROVISIONED=1 \
-    persist.sys.fflag.override.settings_provider_model=false \
     persist.vendor.data.mode=concurrent \
     ril.subscription.types=NV,RUIM \
     ro.telephony.default_network=10,10 \
@@ -350,10 +343,7 @@ PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 
 # Sensor
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    ro.vendor.sensors.mot_ltv=true \
-    persist.vendor.sensors.enable.mag_filter=true \
-    persist.vendor.sensors.hal_trigger_ssr=true \
-    persist.vendor.sensors.odl.adsp=true
+    persist.vendor.sensors.enable.mag_filter=true
 
 # Time
 PRODUCT_PROPERTY_OVERRIDES += \
